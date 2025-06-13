@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import StudentsImg from "../../assets/students.png";
+import StudentsImg from "../../assets/Students.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
