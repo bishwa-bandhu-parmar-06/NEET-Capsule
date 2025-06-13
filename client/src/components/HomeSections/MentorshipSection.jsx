@@ -24,7 +24,7 @@ const MentorshipSection = ({ scrollYProgress }) => {
   };
 
   return (
-    <section className="relative h-screen bg-gradient-to-r from-green-400 to-teal-600 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-r from-green-400 to-teal-600 overflow-hidden">
       {/* 3D Background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
@@ -51,13 +51,13 @@ const MentorshipSection = ({ scrollYProgress }) => {
       </div>
 
       <motion.div 
-        className="relative z-10 container mx-auto px-6 py-24 flex flex-col lg:flex-row items-center justify-center gap-12"
+        className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-12"
         style={{ y, opacity, scale }}
       >
         {/* Left Column */}
-        <div className="lg:w-1/2 ml-20">
+        <div className="w-full lg:w-1/2 lg:ml-10 xl:ml-20">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 leading-tight"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{
               opacity: 1,
@@ -70,7 +70,7 @@ const MentorshipSection = ({ scrollYProgress }) => {
           </motion.h2>
 
           <motion.p 
-            className="text-xl mb-8"
+            className="text-lg sm:text-xl mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ 
               opacity: 1, 
@@ -84,7 +84,7 @@ const MentorshipSection = ({ scrollYProgress }) => {
 
           {/* Counter Grid */}
           <motion.div 
-            className="grid grid-cols-2 gap-8 mb-12"
+            className="grid grid-cols-2 gap-4 sm:gap-8 mb-8 sm:mb-12"
             initial="hidden"
             whileInView="visible"
             transition={{ staggerChildren: 0.2 }}
@@ -93,23 +93,23 @@ const MentorshipSection = ({ scrollYProgress }) => {
             {[{ count: 15000, label: "Students Enrolled" }, { count: 250, label: "Expert Mentors" }].map((item, index) => (
               <motion.div 
                 key={index}
-                className="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm"
+                className="bg-white bg-opacity-10 p-4 sm:p-6 rounded-xl backdrop-blur-sm"
                 variants={{
                   hidden: { opacity: 0, y: 30, scale: 0.95 },
                   visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeInOut" } }
                 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
               >
-                <h3 className="text-3xl font-bold mb-2 text-teal-500">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2 text-teal-500">
                   <Counter target={item.count} duration={2.5} />+
                 </h3>
-                <p className="text-sm">{item.label}</p>
+                <p className="text-xs sm:text-sm">{item.label}</p>
               </motion.div>
             ))}
           </motion.div>
 
           <motion.button
-            className="bg-white cursor-pointer text-teal-600 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
+            className="bg-white cursor-pointer text-teal-600 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full shadow-lg hover:shadow-xl transition-all text-sm sm:text-base"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, y: 30 }}
@@ -126,7 +126,7 @@ const MentorshipSection = ({ scrollYProgress }) => {
 
         {/* Right Column */}
         <motion.div 
-          className="lg:w-1/2 bg-white mr-20 bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm border border-white border-opacity-20"
+          className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:mr-10 xl:mr-20 bg-white bg-opacity-10 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl backdrop-blur-sm border border-white border-opacity-20"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ 
             opacity: 1, 
@@ -135,9 +135,9 @@ const MentorshipSection = ({ scrollYProgress }) => {
           }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h3 className="text-2xl font-bold mb-6 text-teal-500">Why Choose NEET CAPSULE?</h3>
+          <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-teal-500">Why Choose NEET CAPSULE?</h3>
           
-          <ul className="space-y-4">
+          <ul className="space-y-2 sm:space-y-4">
             {[
               "Personalized 1-on-1 Mentorship from NEET experts",
               "AI-Based Daily Tests with Detailed Analysis",
@@ -150,14 +150,14 @@ const MentorshipSection = ({ scrollYProgress }) => {
             ].map((item, index) => (
               <motion.li 
                 key={index}
-                className="flex items-start"
+                className="flex items-start text-sm sm:text-base"
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
                 variants={listItemVariants}
                 viewport={{ once: true, margin: "-50px" }}
               >
-                <svg className="w-5 h-5 mt-1 mr-3 text-teal-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 mt-1 mr-2 sm:mr-3 text-teal-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>{item}</span>
@@ -166,7 +166,7 @@ const MentorshipSection = ({ scrollYProgress }) => {
           </ul>
 
           <motion.div 
-            className="mt-8 pt-6 border-t border-white border-opacity-20"
+            className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white border-opacity-20"
             initial={{ opacity: 0 }}
             whileInView={{ 
               opacity: 1,
@@ -174,8 +174,8 @@ const MentorshipSection = ({ scrollYProgress }) => {
             }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <p className="text-sm mb-2">Need more information?</p>
-            <a href="tel:+918720943648" className="text-xl font-bold hover:underline">
+            <p className="text-xs sm:text-sm mb-1 sm:mb-2">Need more information?</p>
+            <a href="tel:+918720943648" className="text-base sm:text-xl font-bold hover:underline">
               <i className="fas fa-phone-alt mr-2"></i> +91 87209 43648
             </a>
           </motion.div>
