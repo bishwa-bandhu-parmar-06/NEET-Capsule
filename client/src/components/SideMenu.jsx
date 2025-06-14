@@ -19,7 +19,7 @@ import ourMentorsImg from "../assets/sidebar/ourmentors.svg";
 import privacyPolicyImg from "../assets/sidebar/privacyPolicy.svg";
 import termsConditionImg from "../assets/sidebar/terms-condition.svg";
 
-const SideMenu = () => {
+const SideMenu = ({ onLinkClick }) => {
   const location = useLocation();
 
   // const location = useLocation();
@@ -30,11 +30,11 @@ const SideMenu = () => {
   // };
 
   // Handle link click
+   // Handle link click - now safely uses the prop
   const handleLinkClick = () => {
-    if (onLinkClick) {
-      onLinkClick();
-    }
+    onLinkClick?.(); // Optional chaining to safely call if it exists
   };
+
   // Check if the current path matches the link path
   const isActive = (path) => {
     return location.pathname === path;
