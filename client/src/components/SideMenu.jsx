@@ -22,6 +22,19 @@ import termsConditionImg from "../assets/sidebar/terms-condition.svg";
 const SideMenu = () => {
   const location = useLocation();
 
+  // const location = useLocation();
+
+  // Check if the current path matches the link path
+  // const isActive = (path) => {
+  //   return location.pathname === path;
+  // };
+
+  // Handle link click
+  const handleLinkClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
   // Check if the current path matches the link path
   const isActive = (path) => {
     return location.pathname === path;
@@ -32,6 +45,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -47,6 +61,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/auth"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/auth") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -62,6 +77,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/freeSession"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/freeSession") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -77,6 +93,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/mentors"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/mentors") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -94,6 +111,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/mentorship-plan"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/mentorship-plan") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -111,6 +129,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/blogs"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/blogs") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -128,6 +147,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/mentorRegister"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/mentorRegister") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -145,6 +165,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/about"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/about") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -162,6 +183,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/team"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/team") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -179,6 +201,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/contact"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/contact") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -196,6 +219,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/services"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/services") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -211,6 +235,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/faq"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/faq") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -228,6 +253,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/terms"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/terms") ? "text-[#da935f] font-medium" : ""
           }`}
@@ -245,6 +271,7 @@ const SideMenu = () => {
       <li>
         <Link
           to="/privacy"
+          onClick={handleLinkClick}
           className={`flex items-center gap-3 transition-transform duration-300 hover:scale-105 ${
             isActive("/privacy") ? "text-[#da935f] font-medium" : ""
           }`}
